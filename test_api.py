@@ -4,7 +4,7 @@ import os
 
 load_dotenv()
 
-API_KEY = os.getenv("API_KEY")
+API_KEY = os.getenv("OPENWEATHER_API_KEY")
 
 
 params = {"q": "Lecco", "appid": API_KEY, "units": "metric", "lang": "it"}
