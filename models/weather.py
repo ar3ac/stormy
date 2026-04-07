@@ -1,11 +1,22 @@
 from pydantic import BaseModel
 
 
-class WeatherResponde(BaseModel):
+class WeatherResponse(BaseModel):
     city: str
     temperature: float
-    feels_like: float
+    # feels_like: float
     description: str
     humidity: int
     wind_speed: float
-    icon: str
+    # icon: str
+
+
+class ForecastItem(BaseModel):
+    datetime: str
+    temperature: float
+    description: str
+
+
+class ForecastResponse(BaseModel):
+    city: str
+    forecasts: list[ForecastItem]

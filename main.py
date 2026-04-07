@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from dotenv import load_dotenv
 import os
+from routers.weather import router as weather_router
+
 
 load_dotenv()
 openweather_api_key = os.getenv("OPENWEATHER_API_KEY")
@@ -12,6 +14,8 @@ app = FastAPI(
     description="Meteo in tempo reale per qualsiasi città",
     version="1.0.0",
 )
+
+app.include_router(weather_router)
 
 
 @app.get("/", description="Root endpoint")
