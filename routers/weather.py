@@ -18,7 +18,7 @@ router = APIRouter(
 )
 def get_weather(city: str, units: str = "metric"):
     weather_data = get_current_weather(city, units)
-    return WeatherResponde(
+    return WeatherResponse(
         city=city,
         temperature=weather_data["temperature"],
         description=weather_data["description"],
